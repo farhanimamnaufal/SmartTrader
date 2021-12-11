@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VidBasicSaham.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=socials"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Open+Sans:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Basic Saham | Smart Trader</title>
+    <link rel="shortcut icon" href="st.png">
+</head>
+<body>
+        <!--HEADER START-->
+        <nav class="navbar">
+            <div class="content">
+            <div class="logo">
+                <a href="MainPage.html">SmartTrader</a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+                </div>
+                <li><a href="MainPage.html#bloganalytics">Blog Analytics</a></li>
+                <li><a href="MainPage.html#videolearning">Video Learning</a></li>
+                <li><a href="MainPage.html#consultation">Consultation</a></li>
+                <li><a href="landingpage.html" class="sign-in">Sign Out</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            </div>
+        </nav>
+        <!--HEADER END-->
+
+        <!-- VIDEO START -->
+        
+            <h3 class="heading">Basic Saham</h3>
+
+            <div class="containervideo">
+
+                <div class="main-video">
+                    <div class="video">
+                        <video src="Apa itu saham.mp4" controls muted autoplay></video>
+                        <h3 class="title">01. Apa itu saham?</h3>
+                    </div>
+                </div>
+
+                <div class="video-list">
+                    <div class="vid active">
+                        <video src="Apa itu saham.mp4" muted></video>
+                        <h3 class="title">01. Apa itu saham?</h3>
+                    </div>
+                    <div class="vid">
+                        <video src="Apakah saham halal.mp4" muted></video>
+                        <h3 class="title">02. Apakah Transaksi Saham Halal?</h3>
+                    </div>
+                    <div class="vid">
+                        <video src="Bagaimana cara membeli saham.mp4" muted></video>
+                        <h3 class="title">03. Bagaimana Cara Membeli Saham?</h3>
+                    </div>
+                    <div class="vid">
+                        <video src="Indeks pada saham.mp4" muted></video>
+                        <h3 class="title">04. Indeks Pada Saham</h3>
+                    </div>
+                    <div class="vid">
+                        <video src="Alasan membeli saham.mp4" muted></video>
+                        <h3 class="title">05. Alasan Membeli Saham</h3>
+                    </div>
+                </div>
+
+            </div>
+        
+            
+        <!-- VIDEO END -->
+
+        <!--FOOTER START-->
+        <footer>
+            <div class="footer-content">
+              <h3>Smart Trader</h3>
+              <p>Smart Trader merupakan sebuah website non-profit yang menyediakan pembelajaran mengenai saham. Smart Trader menyediakan <i>video learning, blog analytics,</i> dan <i>Consultation</i></p>
+              <ul class="social-media">
+                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/farhan-imam-naufal-0b53b4212/" target="blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/farhanimamnaufal/" target="blank"><i class="fab fa-instagram-square"></i></i></a></li>
+              </ul>
+            </div>
+            <div class="footer-bottom">
+              <p>copyright &copy;2020 SmartTrader. designed by Farhan Imam Naufal</p>
+            </div>
+          </footer>
+        <!--FOOTER END-->
+
+        
+
+        
+        <!--VIDEO-->
+                <script>
+
+                    let listVideo = document.querySelectorAll('.video-list .vid')
+                    let mainVideo = document.querySelector('.main-video video')
+                    let title = document.querySelector('.main-video .title')
+
+                    listVideo.forEach(video =>{
+                        video.onclick = () =>{
+                            listVideo.forEach(vid => vid.classList.remove('active'))
+                            video.classList.add('active')
+                            if(video.classList.contains('active')){
+                                let src = video.children[0].getAttribute('src')
+                                mainVideo.src = src
+                                let text = video.children[1].innerHTML
+                                title.innerHTML = text
+                            }
+                        }
+                    })
+
+                </script>
+        <!--NAVBAR-->
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            menuBtn.onclick = ()=>{
+              navbar.classList.add("show");
+              menuBtn.classList.add("hide");
+              body.classList.add("disabled");
+            }
+            cancelBtn.onclick = ()=>{
+              body.classList.remove("disabled");
+              navbar.classList.remove("show");
+              menuBtn.classList.remove("hide");
+            }
+            window.onscroll = ()=>{
+              this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+          </script>
+
+          
+</body>
+</html>
